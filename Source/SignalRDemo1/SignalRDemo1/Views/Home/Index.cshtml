@@ -18,8 +18,8 @@
         //Para simular mecanismo de respaldo por SSE descomentar la primera línea
         //para simular mecanismo de respaldo por Long Polling descomentar las dos líneas
         //Curiosidad, si lo probais con Edge vereis que no acepta EventSource
-        window.WebSocket = undefined;
-        window.EventSource = undefined;
+        //window.WebSocket = undefined;
+        //window.EventSource = undefined;
 
         var connection = new signalR.HubConnectionBuilder()
             .withUrl('/message')
