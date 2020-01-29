@@ -5,6 +5,7 @@
 <div id="app" class="container">
     <h3>Receptor de mensajes - Azure SignalR</h3>
     <div id="status"></div>
+    <div id="users"></div>
     <div v-if="ready">
         <div id="texto" border="1">
             Los mensajes recibidos son:
@@ -26,6 +27,10 @@
             .catch(function (error) {
                 document.getElementById("status").innerHTML = "status: NOT Connected"
                 console.error(error.message);
+        });
+
+        connection.on("users-connected", function (count) {
+            document.getElementById("users").innerHTML = "users connected: " + count;
         });
 
         connection.on("new-message", function (msg) {
